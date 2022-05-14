@@ -20,7 +20,7 @@ import com.anahuac.calidad.tareaUnitTest.Cuenta;
 import com.anahuac.calidad.tareaUnitTest.DAOsqlCuenta;
 
 public class DAOmysqlCuenta {
-private	DAOsqlCuenta dao;
+/*private	DAOsqlCuenta dao;
 private Cuenta a;
 private ArrayList<Cuenta> DB = new ArrayList<Cuenta>();
 private AlertListener al;
@@ -54,5 +54,5 @@ private AlertListener al;
 	public void AlertaTest() {
 		fail("Not yet implemented");
 	}
-
+*/
 }
