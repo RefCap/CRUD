@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.Select;
 import io.github.bonigarcia.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class PruebaCovid {
+public class PruebaCovidTest {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
