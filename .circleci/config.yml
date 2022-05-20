@@ -25,7 +25,7 @@ jobs:
       # Then run your tests!
       - run:
           name: Test
-          command: mvn MernCrudTest
+          command: MernCrudTest
       - run:
           name: Test
           command: DAOmysqlEstudianteMOCKTest   
