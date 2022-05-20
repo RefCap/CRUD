@@ -25,10 +25,8 @@ jobs:
       # Then run your tests!
       - run:
           name: Test
-          command: MernCrudTest
-      - run:
-          name: Test
-          command: DAOmysqlEstudianteMOCKTest   
+          command: mvn test -Dtest="MernCrudTest"
+
        
 
 # Invoke jobs via workflows
