@@ -12,7 +12,7 @@ jobs:
     # Be sure to update the Docker image tag below to openjdk version of your application.
     # A list of available CircleCI Docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/openjdk
     docker:
-      - image: cimg/openjdk:11-browser-legacy
+      - image: cimg/openjdc:11-browser-legacy
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
@@ -26,6 +26,10 @@ jobs:
       - run:
           name: Test
           command: mvn MernCrudTest
+      - run:
+          name: Test
+          command: mvn DAOmysqlEstudianteMOCKTest   
+       
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
