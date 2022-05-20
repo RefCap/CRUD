@@ -25,7 +25,7 @@ jobs:
       # Then run your tests!
       - run:
           name: Test
-          command: mvn -Dtest=DAOmysqlEstudianteMOCKTest test
+          command: mvn -Dtest=DAOAlumnoTest test
 
        
 
