@@ -25,7 +25,7 @@ jobs:
       # Then run your tests!
       - run:
           name: Test
-          command: mvn test -Dtest="MernCrudTest"
+          command: mvn -Dtest=MernCrudTest test
 
        
 
