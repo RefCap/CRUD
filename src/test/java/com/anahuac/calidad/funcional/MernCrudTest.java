@@ -59,9 +59,23 @@ public class MernCrudTest {
     String textoResultado = etiquetaEsperada.getText();
     assertThat("Nice one!",is(textoResultado));
   }
-
+  
   @Test
-  public void Test_2Update() throws Exception {
+  public void Test_2Buscar() throws Exception {
+		  
+		  driver.get("https://mern-crud.herokuapp.com/");
+		  
+		  pause(3000);
+		    
+		  WebElement etiquetaEsperada = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/table/tbody/tr[1]/td[1]"));
+		    
+		  String text = etiquetaEsperada.getText();
+		    
+		    
+		  assertThat("H", is(text));
+  		}
+  @Test
+  public void Test_3Update() throws Exception {
 	  driver.get("https://mern-crud.herokuapp.com/");
 	    driver.findElement(By.xpath("/html/body/div/div/div[2]/table/tbody/tr/td[5]/button[1]")).click();
 	    driver.findElement(By.name("name")).click();
@@ -78,7 +92,7 @@ public class MernCrudTest {
   }
 
   @Test
-  public void Test_3Eliminar() throws Exception {
+  public void Test_4Eliminar() throws Exception {
 	driver.get("https://mern-crud.herokuapp.com/");
 	driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td[5]/button[2]")).click();
 	driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Delete User'])[1]/following::p[1]")).click();
@@ -91,6 +105,8 @@ public class MernCrudTest {
 	String textoResultado = etiquetaEsperada.getText();
 	assertThat("null",is(not(textoResultado)));
 	    }
+  
+	 
   
   private boolean isElementPresent(By by) {
 	    try {
