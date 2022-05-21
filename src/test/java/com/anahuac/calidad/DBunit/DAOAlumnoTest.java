@@ -206,7 +206,8 @@ public void testDelete() {
 		
 	} catch (Exception e) {
 		// TODO: handle exception
-		fail("Error in insert ttest: " + e.getMessage());
+		fail("Error in insert test: " + e.getMessage());
 	}
 }
 }
+
