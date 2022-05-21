@@ -48,7 +48,7 @@ public void setUp() throws Exception {
 	super.setUp();
 	Connection jdbcConnection;
 	
-	jdbcConnection = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\mrefp\\Desktop\\Estudiantes2.db");
+	jdbcConnection = DriverManager.getConnection("jdbc:mysql:sql-data/dummy.sql");
 	
 	connection = new DatabaseConnection(jdbcConnection);
 	
