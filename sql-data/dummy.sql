@@ -9,9 +9,7 @@ CREATE TABLE estudiante (
 );
 
 INSERT INTO estudiante
-VALUES (
-id="1", nombre="Abril", apellido="Guzman", email="uno@gmail.com", carrera="uno",
-id="2", nombre="Abril", apellido="Guzman", email="uno@gmail.com", carrera="uno",
-id="3", nombre="Abril", apellido="Guzman", email="uno@gmail.com", carrera="uno",
-
-);
+VALUES 
+(id="1", nombre="Abril", apellido="Guzman", email="uno@gmail.com", carrera="uno"),
+(id="2", nombre="Abril", apellido="Guzman", email="uno@gmail.com", carrera="uno"),
+(id="3", nombre="Abril", apellido="Guzman", email="uno@gmail.com", carrera="uno");
