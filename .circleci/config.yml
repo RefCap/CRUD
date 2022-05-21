@@ -7,18 +7,18 @@ jobs:
   build-and-test:
     docker:
       - image: cimg/openjdk:17.0.3-browsers
+      - image: cimg/mysql:8.0
+
     steps:
       - browser-tools/install-browser-tools
       - checkout
-      - run:
+      - run: 
           name: Build
           command: mvn -B -DskipTests clean package
-          command: sudo docker pull mcr.microsoft.com/mssql/server:2019-latest
-          command: docker pull mcr.microsoft.com/mssql/server:2019-latest
       # Then run your tests!
       - run:
           name: Test
-          command: mvn test
+          command: mvn -Dtest=DAOAlumnoTest test
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
