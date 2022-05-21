@@ -1,10 +1,12 @@
-version: 2.1
-orbs:
-  browser-tools: circleci/browser-tools@1.2.3
+# Legacy convenience images (i.e. images in the `circleci/` Docker namespace)
+# will be deprecated starting Dec. 31, 2021. Next-gen convenience images with 
+# browser testing require the use of the CircleCI browser-tools orb, available 
+# with config version 2.1.
+version: 2
 jobs:
   build:
     docker:
-      - image: cimg/php:8.1-browsers # The primary container where steps are run
+      - image: cimg/php:7.1 # The primary container where steps are run
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
