@@ -7,23 +7,28 @@ jobs:
   build-and-test:
     docker:
       - image: cimg/openjdk:17.0.3-browsers
-      - image: cimg/mysql:8.0
+      - image: circleci/mysql:latest-ram
 #reference
         environment:
-          MYSQL_ROOT_PASSWORD: rootpw
+          MYSQL_ROOT_PASSWORD: ''
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_DATABASE: Estudiantes2_db
           MYSQL_USER: user
-          MYSQL_PASSWORD: passw0rd 
 
     steps:
       - browser-tools/install-browser-tools
       - checkout
       - run:
+      - run:
           name: Install MySQL CLI; Import dummy data; run an example query
           command: |
             sudo apt-get install default-mysql-client
-            mysql -h 127.0.0.1 -u user -ppassw0rd test_db < sql-data/dummy.sql
-            mysql -h 127.0.0.1 -u user -ppassw0rd --execute="SELECT * FROM Estudiantes2_db.estudiante"
+      - run:
+          name: Crear Base de datos
+          command: |
+            
+            mysql -h 127.0.0.1 -u root --password='' Estudiantes2_db < sql-data/dummy.sql
+            mysql -h 127.0.0.1 -u root --password='' --execute="SELECT * FROM Estudiantes2_db.estudiante"
       - run: 
           name: Build
           command: mvn -B -DAOAlumnoTest clean package
