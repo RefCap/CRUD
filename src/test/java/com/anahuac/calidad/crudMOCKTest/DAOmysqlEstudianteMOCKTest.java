@@ -49,6 +49,22 @@ private ArrayList<Estudiante> DB = new ArrayList<Estudiante>();
 
 	}
 	@Test
+	public void FindEstudiantetest() {
+	Estudiante e = new Estudiante("nombre", "apellido", "correo","carrera");	
+	
+	Answer <Boolean> encontrar = invocation ->{
+	Estudiante aux = (Estudiante) invocation.getArguments()[0];
+	Estudiante estudianteold = DB.get(e.getId());	
+	DB.set(e.getId(),estudianteold);
+	return true;
+	};
+	when(dao.findEstudiante(e.getId())).thenAnswer(encontrar);
+	int estudianteold = DB.size();
+	assertThat(estudianteold,is(estudianteold)); 
+	}
+	
+	
+	@Test
 	public void DelateEstudiantetest() {
 	Estudiante e = new Estudiante("nombre", "apellido", "correo","carrera");	
 	DB.add(e);	
@@ -81,6 +97,9 @@ private ArrayList<Estudiante> DB = new ArrayList<Estudiante>();
 	when(dao.updateEstudiante(e)).thenAnswer(actualizar);
 	int estudianteold = DB.size();
 	assertThat(estudianteold,is(estudianteold) ); }
+	
+	
+	
 }
 	
 	
