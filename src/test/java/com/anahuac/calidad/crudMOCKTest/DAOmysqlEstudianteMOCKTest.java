@@ -77,7 +77,10 @@ private ArrayList<Estudiante> DB = new ArrayList<Estudiante>();
 	DB.set(e.getId(),estudianteold);
 	return true;
 	
-	};}
+	};
+	when(dao.updateEstudiante(e)).thenAnswer(actualizar);
+	int estudianteold = DB.size();
+	assertThat(estudianteold,is(estudianteold) ); }
 }
 	
 	
